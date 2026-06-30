@@ -169,7 +169,7 @@ The `kpi_dashboard` tab contains:
 
 This project was designed to reflect the core responsibilities of a Junior Data Analyst in a digital ad trading environment:
 
-| JD Requirement | Project Demonstration |
+| Requirement | Project Demonstration |
 |---|---|
 | Data quality assurance using Excel and SQL | 5-check QA framework with structured anomaly flagging |
 | Daily and weekly performance trackers | Dedicated tracker tab with time-series KPIs |
@@ -185,7 +185,6 @@ This project was designed to reflect the core responsibilities of a Junior Data 
 
 **Yadnesh Bapat**
 Data Analyst | Sydney, NSW
-[LinkedIn](https://www.linkedin.com/in/yadnesh-bapat/)
 
 ---
 
