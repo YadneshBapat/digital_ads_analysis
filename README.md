@@ -1,6 +1,6 @@
 # 📊 Digital Ad Platform Performance Analysis
 
-> A programmatic advertising analytics project simulating the daily data operations of a digital ad trading team — built to demonstrate data quality assurance, performance reporting, KPI dashboard development, and yield analysis using real social media ad event data.
+> A programmatic advertising analytics project simulating the daily data operations of a digital ad trading team - built to demonstrate data quality assurance, performance reporting, KPI dashboard development, and yield analysis using real social media ad event data.
 
 ---
 
@@ -28,12 +28,12 @@ The dataset was sourced from Kaggle: [Social Media Advertisement Performance](ht
 
 | File | Description | Rows |
 |---|---|---|
-| `adevent.csv` | Ad events: impressions, clicks, likes, shares, purchases | 400,000 |
-| `ads.csv` | Ad metadata: platform, format, targeting parameters | — |
+| `adevent.csv` | Ad events: impressions, clicks, likes, shares, purchases | 400,000 events |
+| `ads.csv` | Ad metadata: platform, format, targeting parameters | 200 ads |
 | `campaigns.csv` | Campaign details: dates, budget, duration | 50 campaigns |
-| `users.csv` | User demographics: age, gender, country, interests | — |
+| `users.csv` | User demographics: age, gender, country, interests | 1000 users |
 
-**Source:** [Kaggle — Social Media Advertisement Performance](https://www.kaggle.com/datasets/alperenmyung/social-media-advertisement-performance)
+**Source:** [Kaggle - Social Media Advertisement Performance](https://www.kaggle.com/datasets/alperenmyung/social-media-advertisement-performance)
 
 ---
 
@@ -53,10 +53,10 @@ The dataset was sourced from Kaggle: [Social Media Advertisement Performance](ht
 The Excel workbook (`Nine_AdPerformance_Portfolio.xlsx`) contains 9 tabs:
 
 ```
-├── raw_events          # Raw event data — untouched source
-├── raw_ads             # Raw ad metadata — untouched source
-├── raw_campaigns       # Raw campaign data — untouched source
-├── raw_users           # Raw user data — untouched source
+├── raw_events          # Raw event data - untouched source
+├── raw_ads             # Raw ad metadata - untouched source
+├── raw_campaigns       # Raw campaign data - untouched source
+├── raw_users           # Raw user data - untouched source
 ├── master_table        # Joined dataset with 28 columns including engineered metrics
 ├── data_qa             # 5-check data quality assurance report
 ├── pivot_analysis      # 4 pivot tables: platform, campaign, day, demographics
@@ -69,7 +69,7 @@ The Excel workbook (`Nine_AdPerformance_Portfolio.xlsx`) contains 9 tabs:
 ## ⚙️ Methodology
 
 ### 1. Data Joining
-All 4 source files were joined into a single `master_table` using **XLOOKUP** (and INDEX/MATCH for older Excel versions), with `raw_events` as the base table enriched by ad, campaign, and user attributes — simulating a multi-platform vendor data reconciliation workflow.
+All 4 source files were joined into a single `master_table` using **XLOOKUP** (and INDEX/MATCH for older Excel versions), with `raw_events` as the base table enriched by ad, campaign, and user attributes - simulating a multi-platform vendor data reconciliation workflow.
 
 ### 2. Data Quality Assurance (5-Check Framework)
 
@@ -81,7 +81,7 @@ All 4 source files were joined into a single `master_table` using **XLOOKUP** (a
 | Platform volume sanity check | Facebook: 254,096 \| Instagram: 145,904 \| No unmatched ✓ |
 | Revenue sanity check | $1.46M estimated \| CPM range $494–$36,340 ✓ |
 
-> **Critical Finding:** 63,197 events occurred before campaign start dates and 148,037 after campaign end dates — flagged as a vendor tracking anomaly requiring investigation before revenue figures can be trusted for yield decisions.
+> **Critical Finding:** 63,197 events occurred before campaign start dates and 148,037 after campaign end dates - flagged as a vendor tracking anomaly requiring investigation before revenue figures can be trusted for yield decisions.
 
 ### 3. Engineered Metrics
 The following metrics were absent from the raw dataset and derived using industry-standard programmatic assumptions:
@@ -99,25 +99,25 @@ The following metrics were absent from the raw dataset and derived using industr
 All assumptions are documented in the Insights tab methodology section.
 
 ### 4. Performance Trackers
-Daily and weekly trackers were built in a dedicated tab using **COUNTIFS** and **SUMIFS** referencing `week_starting` and `event_date` columns, tracking impressions, engagements, engagement rate, estimated revenue, and average CPM over time — with conditional formatting (green-yellow-red colour scale) for at-a-glance trend scanning.
+Daily and weekly trackers were built in a dedicated tab using **COUNTIFS** and **SUMIFS** referencing `week_starting` and `event_date` columns, tracking impressions, engagements, engagement rate, estimated revenue, and average CPM over time - with conditional formatting (green-yellow-red colour scale) for at-a-glance trend scanning.
 
 ---
 
 ## 📈 Key Findings
 
 ### Platform Performance
-- Instagram delivered a **4.19% engagement rate** vs Facebook's **4.07%** despite generating **57% fewer impressions** — suggesting stronger creative resonance relative to volume
+- Instagram delivered a **4.19% engagement rate** vs Facebook's **4.07%** despite generating **57% fewer impressions** - suggesting stronger creative resonance relative to volume
 - Facebook dominates raw volume: **254,096 events (63.5%)** vs Instagram's **145,904 (36.5%)**
 
 ### Campaign Performance
 - **49 campaigns** analysed with estimated revenue ranging from **$4,862 (Campaign_42_Summer)** to **$60,466 (Campaign_20_Winter)**
-- **73.6x CPM variance** between highest ($36,340 — Campaign_35_Launch) and lowest ($494 — Campaign_42_Summer) performing campaigns — significant yield optimisation opportunity
+- **73.6x CPM variance** between highest ($36,340 - Campaign_35_Launch) and lowest ($494 - Campaign_42_Summer) performing campaigns - significant yield optimisation opportunity
 - Overall average CPM: **$5,961**
 
 ### Audience Insights
 - **25–34 age group** represents the largest audience segment at **41.4% (165,632 events)**
 - Male users account for **55.4%** of all events; Female **34.4%**; Other **10.2%**
-- 16–17 age bracket represents **8.8%** of events — worth flagging for brand safety review on targeted campaigns
+- 16–17 age bracket represents **8.8%** of events - worth flagging for brand safety review on targeted campaigns
 
 ### Timing Anomalies
 - **52.8% of all events (211,234)** recorded outside their campaign's active window
@@ -125,7 +125,7 @@ Daily and weekly trackers were built in a dedicated tab using **COUNTIFS** and *
 - Revenue attributed to anomalous events flagged for re-validation before use in yield reporting
 
 ### Day of Week
-- Engagement is **consistent across all 7 days** (8,550–8,653 engagement events per day) — no significant weekend uplift, suggesting always-on scheduling is appropriate for this inventory
+- Engagement is **consistent across all 7 days** (8,550–8,653 engagement events per day) - no significant weekend uplift, suggesting always-on scheduling is appropriate for this inventory
 
 ---
 
@@ -145,8 +145,8 @@ The `kpi_dashboard` tab contains:
 2. Weekly Engagement Pattern by Day (Line)
 3. Top 10 Campaigns by Estimated Revenue (Horizontal Bar)
 4. Audience Distribution by Age & Gender (Stacked Column)
-5. Timing Anomalies by Week — Trend Check (Line)
-6. Event Volume by Country — Top 8 (Bar)
+5. Timing Anomalies by Week - Trend Check (Line)
+6. Event Volume by Country - Top 8 (Bar)
 7. Engagement Rate by Ad Format (Column)
 
 ---
@@ -160,7 +160,7 @@ The `kpi_dashboard` tab contains:
 - Viewability estimated from time-of-day benchmarks (IAS 2024 industry standards)
 - Click events not present in dataset; Likes and Shares treated as engagement proxies
 - Timing anomalies may reflect timezone discrepancies or vendor pixel firing delays
-  rather than confirmed tracking errors — vendor cross-check recommended
+  rather than confirmed tracking errors - vendor cross-check recommended
 ```
 
 ---
@@ -185,7 +185,7 @@ This project was designed to reflect the core responsibilities of a Junior Data 
 
 **Yadnesh Bapat**
 Data Analyst | Sydney, NSW
-[LinkedIn](https://www.linkedin.com/in/yadnesh-bapat/) · yadnesh.bapat@outlook.com
+[LinkedIn](https://www.linkedin.com/in/yadnesh-bapat/)
 
 ---
 
