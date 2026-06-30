@@ -399,4 +399,4 @@ Build a recurring data quality check (automatable in Python or via Excel macros)
 
 ---
 
-**Yadnesh Bapat** | [LinkedIn](https://www.linkedin.com/in/yadnesh-bapat/) | yadnesh.bapat@outlook.com
+**Yadnesh Bapat** 
