@@ -1,12 +1,12 @@
 # 📊 Digital Ad Platform Performance Analysis
 
-> A programmatic advertising analytics project simulating the daily data operations of a digital ad trading team - built to demonstrate data quality assurance, performance reporting, KPI dashboard development, and yield analysis using real social media ad event data.
+> A digital advertising analytics project simulating the daily data operations of a digital ad trading team - built to demonstrate data quality assurance, performance reporting, KPI dashboard development, and yield analysis using real social media ad event data.
 
 ---
 
 ## 📌 Project Overview
 
-This project analyses **400,000 ad events** across Facebook and Instagram campaigns sourced from a real multi-table social media advertising dataset. The work mirrors the core responsibilities of a Junior Data Analyst in a programmatic trading team: joining raw vendor data, validating data integrity, engineering missing metrics, building performance trackers, and surfacing actionable insights through a structured Excel dashboard.
+This project analyzes 400,000 Facebook and Instagram advertising events from a multi-table social media advertising dataset. The analysis includes integrating raw vendor data, performing data validation, engineering missing KPIs, developing campaign performance trackers, and creating an interactive Excel dashboard to uncover actionable insights and support data-driven decision-making.
 
 ---
 
@@ -67,7 +67,7 @@ The Excel workbook (`AdPerformance_Portfolio.xlsx`) contains 9 tabs:
 ## ⚙️ Methodology
 
 ### 1. Data Joining
-All 4 source files were joined into a single `master_table` using **XLOOKUP** (and INDEX/MATCH for older Excel versions), with `raw_events` as the base table enriched by ad, campaign, and user attributes - simulating a multi-platform vendor data reconciliation workflow.
+All 4 source files were joined into a single `master_table` using **XLOOKUP** (can also use INDEX/MATCH for older Excel versions), with `raw_events` as the base table enriched by ad, campaign, and user attributes - simulating a multi-platform vendor data reconciliation workflow.
 
 ### 2. Data Quality Assurance (5-Check Framework)
 
@@ -163,9 +163,7 @@ The `kpi_dashboard` tab contains:
 
 ---
 
-## 💼 Relevance to Programmatic Trading Role
-
-This project was designed to reflect the core responsibilities of a Junior Data Analyst in a digital ad trading environment:
+## 💼 Project Deliverables
 
 | Requirement | Project Demonstration |
 |---|---|
