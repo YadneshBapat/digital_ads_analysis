@@ -4,7 +4,7 @@
 **Prepared by:** Yadnesh Bapat  
 **Dataset:** Social Media Advertisement Performance (400,000 events, 50 campaigns)  
 **Platforms Analysed:** Facebook, Instagram  
-**Period Covered:** April 2025 – September 2025  
+**Period Covered:** April 2025 - September 2025  
 
 ---
 
@@ -85,7 +85,7 @@ This is the most significant data quality finding in the entire analysis.
 
 *For BEFORE_START events (63,197):*
 - Pixel pre-firing: tracking pixels placed on publisher pages may begin firing before campaign activation in the ad server
-- Timezone misalignment: if the vendor's event logging system uses UTC while campaign dates are recorded in local time (e.g. AEST), a campaign starting at midnight AEST would appear to start 10–11 hours later in UTC logs, creating a false "before start" window
+- Timezone misalignment: if the vendor's event logging system uses UTC while campaign dates are recorded in local time (e.g. AEST), a campaign starting at midnight AEST would appear to start 10-11 hours later in UTC logs, creating a false "before start" window
 - Test or preview impressions: some DSPs serve a small number of test impressions before a campaign officially goes live to verify creative delivery
 
 *For AFTER_END events (148,037):*
@@ -137,7 +137,7 @@ Revenue estimates derived from out-of-window events cannot be reliably attribute
 | Facebook | 215,972 | 8,780 | 4.07% | - |
 | Instagram | 123,840 | 5,190 | 4.19% | - |
 
-Instagram delivers a higher engagement rate despite significantly lower impression volume. This is a consistent pattern in social media advertising: Instagram's visual-first, shorter-form feed format tends to generate higher per-impression engagement, particularly among 18–34 demographics.
+Instagram delivers a higher engagement rate despite significantly lower impression volume. This is a consistent pattern in social media advertising: Instagram's visual-first, shorter-form feed format tends to generate higher per-impression engagement, particularly among 18-34 demographics.
 
 ### 3.2 Platform Efficiency Ratio
 
@@ -206,18 +206,18 @@ A high CPM with low volume and a below-average CTR proxy suggests this campaign 
 
 | Age Group | Events | % of Total |
 |---|---|---|
-| 16–17 | 35,355 | 8.8% |
-| 18–24 | 124,525 | 31.1% |
-| 25–34 | 165,632 | 41.4% |
-| 35–44 | 58,036 | 14.5% |
-| 45–54 | 13,158 | 3.3% |
-| 55–65 | 3,294 | 0.8% |
+| 16-17 | 35,355 | 8.8% |
+| 18-24 | 124,525 | 31.1% |
+| 25-34 | 165,632 | 41.4% |
+| 35-44 | 58,036 | 14.5% |
+| 45-54 | 13,158 | 3.3% |
+| 55-65 | 3,294 | 0.8% |
 
-The 25–34 segment dominates at 41.4%, followed by 18–24 at 31.1%. Together these two groups account for **72.5% of all events**, confirming this inventory skews heavily toward a millennial/younger Gen Z audience.
+The 25-34 segment dominates at 41.4%, followed by 18-24 at 31.1%. Together these two groups account for **72.5% of all events**, confirming this inventory skews heavily toward a millennial/younger Gen Z audience.
 
-### 5.2 The 16–17 Age Bracket - Brand Safety Flag
+### 5.2 The 16-17 Age Bracket - Brand Safety Flag
 
-8.8% of all events (35,355) involve users aged 16–17. Depending on campaign targeting parameters and the advertiser's product category, this may require a brand safety review. Several campaigns in this dataset use "All" as their target age group - meaning they are not excluding minors from delivery. For any campaigns involving financial products, alcohol adjacency, or mature content categories, this should be flagged to the account team immediately for targeting adjustment.
+8.8% of all events (35,355) involve users aged 16-17. Depending on campaign targeting parameters and the advertiser's product category, this may require a brand safety review. Several campaigns in this dataset use "All" as their target age group - meaning they are not excluding minors from delivery. For any campaigns involving financial products, alcohol adjacency, or mature content categories, this should be flagged to the account team immediately for targeting adjustment.
 
 ### 5.3 Gender Distribution
 
@@ -272,7 +272,7 @@ The day-of-week distribution is **remarkably flat** - the difference between the
 
 **Interpretation A - Audience behaviour is genuinely consistent:** The user base for this inventory interacts with social media content at a stable daily rate regardless of day, suggesting an always-on content consumption pattern rather than weekend-heavy or weekday-heavy usage.
 
-**Interpretation B - Dataset is simulated or smoothed:** The uniformity is so precise that it may indicate the dataset was generated with controlled distributions rather than reflecting genuinely observed behaviour. Real social media engagement data typically shows at least a 10–15% variance between weekdays and weekends.
+**Interpretation B - Dataset is simulated or smoothed:** The uniformity is so precise that it may indicate the dataset was generated with controlled distributions rather than reflecting genuinely observed behaviour. Real social media engagement data typically shows at least a 10-15% variance between weekdays and weekends.
 
 **Recommendation:** Flag this finding in any reporting to senior analysts. If this were real vendor data, the flatness would warrant a question to the data provider about whether any smoothing or sampling methodology was applied during export. For portfolio purposes, the finding demonstrates analytical maturity - identifying when data looks "too clean" is a core data quality skill.
 
@@ -296,7 +296,7 @@ Night-segment impressions carry a viewability penalty and should receive lower C
 | Total Estimated Revenue | $1,458,388 |
 | Average CPM | $5,961 |
 | Median CPM (estimated) | ~$4,500 |
-| CPM Range | $494 – $36,340 |
+| CPM Range | $494 - $36,340 |
 | CPM Variance | 73.6x |
 | Revenue Share Assumption | 72% (publisher net of DSP/SSP fees) |
 
@@ -331,13 +331,13 @@ The 73.6x CPM variance between best and worst performing campaigns represents a 
 **R1 - Vendor Escalation on Timing Anomalies**
 Raise a formal data discrepancy query with the vendor covering the 211,234 out-of-window events. Request ad server log cross-reference to determine whether the event timestamps reflect actual user interactions or pixel/tracking artefacts. Until resolved, all revenue figures derived from this dataset should carry a data quality disclaimer in any reporting.
 
-**R2 - Brand Safety Review for 16–17 Age Group**
-Pull a breakdown of which campaigns delivered to the 16–17 age bracket and cross-reference against campaign targeting specifications. For any campaign with "All" as the target age group, recommend adding an age floor of 18+ unless the advertiser has specifically approved minor-audience delivery.
+**R2 - Brand Safety Review for 16-17 Age Group**
+Pull a breakdown of which campaigns delivered to the 16-17 age bracket and cross-reference against campaign targeting specifications. For any campaign with "All" as the target age group, recommend adding an age floor of 18+ unless the advertiser has specifically approved minor-audience delivery.
 
 **R3 - Campaign_42_Summer Placement Review**
 Request a placement-level breakdown from the vendor for Campaign_42_Summer. The $494 CPM on 16,030 events suggests remnant inventory delivery. Review floor price settings and test a CPM floor increase to improve monetisation, accepting lower volume as an acceptable trade-off.
 
-### Short-Term Actions (Next 2–4 Weeks)
+### Short-Term Actions (Next 2-4 Weeks)
 
 **R4 - Instagram Budget Reallocation Test**
 Design an A/B test reallocating 10% of Facebook impression budget to Instagram for a single campaign flight. Measure engagement rate and CPM differential over 4 weeks. If Instagram maintains its efficiency advantage at higher volume, gradually increase allocation to a 55/45 Facebook/Instagram split.
@@ -351,7 +351,7 @@ Present a proposal to the yield team to implement daypart-based CPM floor pricin
 ### Strategic Actions (Next Quarter)
 
 **R7 - Lookalike Audience Expansion for Campaign_35_Launch**
-Campaign_35_Launch's $36,340 CPM suggests it is reaching a very high-value but extremely narrow audience. Model a lookalike audience expansion using the 25–34 high-engagement segment as a seed audience. Target a 10–15x volume increase while accepting a 20–30% CPM reduction - net revenue impact should be strongly positive.
+Campaign_35_Launch's $36,340 CPM suggests it is reaching a very high-value but extremely narrow audience. Model a lookalike audience expansion using the 25-34 high-engagement segment as a seed audience. Target a 10-15x volume increase while accepting a 20-30% CPM reduction - net revenue impact should be strongly positive.
 
 **R8 - Always-On Scheduling Confirmation**
 The flat day-of-week engagement pattern supports an always-on campaign scheduling approach rather than day-parting or weekend-heavy scheduling. Confirm this with a controlled test: run one campaign with uniform daily budgeting and one with weekend-weighted budgeting, then compare engagement efficiency over 8 weeks.
@@ -385,7 +385,7 @@ Build a recurring data quality check (automatable in Python or via Excel macros)
 
 | Assumption | Detail | Rationale |
 |---|---|---|
-| Revenue share: 72% | Publisher keeps 72% of campaign budget after DSP/SSP fees | Industry standard range is 60–80%; 72% used as mid-point conservative estimate |
+| Revenue share: 72% | Publisher keeps 72% of campaign budget after DSP/SSP fees | Industry standard range is 60-80%; 72% used as mid-point conservative estimate |
 | CPM formula | Budget ÷ total campaign impressions × 1,000 | Standard programmatic CPM calculation; uses allocated budget as proxy for actual billed spend |
 | Engagement definition | Likes + Shares only | Clicks, Comments, and Purchases excluded as they represent different funnel stages; Likes and Shares represent active content engagement |
 | Viewability proxy | Time of day (Morning/Evening = High, Afternoon = Medium, Night = Low) | Based on IAS 2024 benchmark data; actual viewability requires third-party measurement |
