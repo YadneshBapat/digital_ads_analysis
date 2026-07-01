@@ -8,8 +8,6 @@
 
 This project analyses **400,000 ad events** across Facebook and Instagram campaigns sourced from a real multi-table social media advertising dataset. The work mirrors the core responsibilities of a Junior Data Analyst in a programmatic trading team: joining raw vendor data, validating data integrity, engineering missing metrics, building performance trackers, and surfacing actionable insights through a structured Excel dashboard.
 
-The dataset was sourced from Kaggle: [Social Media Advertisement Performance](https://www.kaggle.com/datasets/alperenmyung/social-media-advertisement-performance)
-
 ---
 
 ## 🎯 Key Objectives
