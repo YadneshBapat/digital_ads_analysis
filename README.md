@@ -50,7 +50,7 @@ The dataset was sourced from Kaggle: [Social Media Advertisement Performance](ht
 
 ## 📁 Workbook Structure
 
-The Excel workbook (`Nine_AdPerformance_Portfolio.xlsx`) contains 9 tabs:
+The Excel workbook (`AdPerformance_Portfolio.xlsx`) contains 9 tabs:
 
 ```
 ├── raw_events          # Raw event data - untouched source
